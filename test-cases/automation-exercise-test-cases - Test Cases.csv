@@ -1,0 +1,220 @@
+Test Case ID,Module,Title,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Bug ID,Test Date,Tester
+TC-REV-001,Product Review,Submit a product review containing whitespace only.,"1. The Automation Exercise website is available.
+2. The user is on the Product Details page.","Name: Test
+Email: teste@o2.pl
+Review: [single space]","1. Scroll to the ""Write Your Review"" section.
+2. Enter a valid name.
+3. Enter a valid email address.
+4. Enter a single space in the review field.
+5. Click ""Submit"".","The form is not submitted and a validation message is displayed.
+",The form is submitted and a success message is displayed.,Failed,BUG-001,2026-09-01,Katarzyna Chardy
+TC-PAY-001,Payment,Place an order using alphabetic characters in numeric card fields,"1. The Automation Exercise website is available.
+2. The user has an active account.
+3. The user is logged in.
+4. At least one product is in the cart.
+5. The payment form is displayed.","Name on Card: Anna Tester
+Card Number: abcdefgh
+CVC: abc
+Expiration Month: ab
+Expiration Year: abcd","1. Enter a valid cardholder name.
+2. Enter letters in the card number field.
+3. Enter letters in the CVC field.
+4. Enter letters in the expiration month field.
+5. Enter letters in the expiration year field.
+6. Click ""Pay and Confirm Order""",Validation messages are displayed and the order is not placed.,The invalid values are accepted and the order is placed successfully.,Failed,BUG-002,2026-09-01,Katarzyna Chardy
+TC-PROD-001,Products,Display products from the Kids / Dress category,"1. The Automation Exercise home page is open:
+https://www.automationexercise.com", -,"1. Expand the ""Kids"" category.
+2. Select ""Dress"".
+3. Review the displayed products.",Only products classified as dresses are displayed.,"""Sleeves Top and Short - Blue & Pink"" is displayed, although its name indicates that it is a top and shorts set.",Failed,BUG-003,2026-09-01,Katarzyna Chardy
+TC-CART-001,Cart,Remove a product from the cart,"1. At least one product has been added to the cart.
+2. The Cart page is open.",-,"1. Locate the product in the cart.
+2. Observe the remove icon.
+3. Click the remove icon.","The remove control is clearly displayed as active and the product is
+removed after clicking it.","The control appears disabled, but clicking it removes the product.",Failed,BUG-004,2026-09-01,Katarzyna Chardy
+TC-REG-001,Registration,Register using valid data,"1. The Automation Exercise home page is open:
+https://www.automationexercise.com","Title: Mr.
+Name: Adam
+Email: testowy@gm.com
+Password: Q@test!2026
+Date of Birth:1 January 2000
+First name: Adam
+Last name: Testowy
+Company: Test Firma
+Adress: Testowa 10
+Country: Canada
+State: Ontario
+City: Toronto
+Zipcode: M5V 3L9
+Mobile Number: 111222333","1. Click ""Singup/Login"".
+2. As New User enter Name in the name field.
+3. Enter Email in the email field.
+4. Click ""Singup"".
+5. Select Title in the radio button.
+6. Enter Password in the password field.
+7. Select Date of Birth.
+8. Enter First name in the first name field.
+9. Enter Last name in the last name field.
+10. Enter Company in the company field.
+11. Enter Adress in the adress field.
+12. Enter State in the state field.
+13. Enter City in the city field.
+14. Enter Zipcode in the zipcode field.
+15. Enter Mobile Number in the mobile number field.
+16. Click ""Create Account"".","The account is created succesfully, and a confirmation message is displayed.","The account was created successfully, and the message ""Account Created!"" was displayed.",Passed,-,2026-09-02,Katarzyna Chardy
+TC-REG-002,Registration,Register without a required name,"1. The Automation Exercise home page is open:
+https://www.automationexercise.com",Email: test12@abc.com,"1. Click ""Singup/Login"".
+2. As New User enter email in the email field.
+3. Click ""Singup"".",Registration is blocked and a validation message is displayed for the required name field.,"The registration form was not submitted. A native browser validation message was displayed next to the name field, indicating that the field is required.",Passed,-,2026-09-06,Katarzyna Chardy
+TC-REG-003,Registration,Register using an existing email adress,"1. The Automation Exercise login page is open:
+https://www.automationexercise.com/login ","Name: Ewa
+Email: testowy@gm.com","1. As New User enter Name in the name field.
+2. Enter Email in the email field.
+3. Click ""Singup"".","Registration is blocked, and a validation message indicates that the email address is already in use.",The registration form was not submitted. A browser validation message was displayed.,Passed,-,2026-09-06,Katarzyna Chardy
+TC-LOGIN-001,Login,Log in using valid credentials,"1. The Automation Exercise login page is open:
+https://www.automationexercise.com/login","Name: Adam
+Email: testowy@gm.com
+Password: Q@test!2026","1. In the ""Login to your account"" section, enter Email in the email field.
+2. Enter Password in the password field.
+3. Click the ""Login"" button.","The user is successfully logged in and redirected to the home page. The ""Logged in as [Name]"" message is displayed at the top of the page.","The user was successfully logged in and redirected to the home page. The ""Logged in as [Name]"" message was displayed at the top of the page.",Passed,-,2026-09-06,Katarzyna Chardy
+TC-LOGIN-002,Login,Log in using an incorrect password,"1. The Automation Exercise login page is open:
+https://www.automationexercise.com/login","Email: testowy@gm.com
+Password: test123","1. In the ""Login to your account"" section, enter Email in the email field.
+2. Enter Password in the password field.
+3. Click the ""Login"" button.","The login attempt is rejected, and a validation message indicates that the email address or password is invalid.","The login attempt was rejected, and a validation message indicated that the email address or password was invalid.",Passed,-,2026-09-06,Katarzyna Chardy
+TC-LOGIN-003,Login,Log in without an email address,"1. The Automation Exercise login page is open:
+https://www.automationexercise.com/login",Password: Q@test!2026,"1. In the ""Login to your account"" section, enter Password in the password field.
+2. Click the ""Login"" button.","The login attempt is rejected, and a validation message indicates that the email address is required.","The login attempt was rejected, and a validation message indicates that the email address was required.",Passed,-,2026-09-06,Katarzyna Chardy
+TC-LOGIN-004,Login,Log out an authenticated user,"1. The Automation Exercise login page is open:
+https://www.automationexercise.com/login
+2. The user has an active account.
+3. The user is logged in.
+4. The home page is displayed.",-,"1. Verify that the ""Logged in as [Name]"" message is displayed in the navigation bar.
+2. Click the ""Logout"" button","The user is successfully logged out and redirected to the Signup / Login page. The ""Logged in as [Name]"" message is no longer displayed.","The user is successfully logged out and redirected to the Signup / Login page. The ""Logged in as [Name]"" message is no longer displayed.",Passed,-,2026-09-06,Katarzyna Chardy
+TC-PROD-002,Products,Search for an existing product,"1. The Automation Exercise products page is open:
+https://www.automationexercise.com/products",Phrase: jeans,"1. Enter Phrase in the ""Search Product"" field.
+2. Click loop icon.",The application displays products matching the entered search term.,"The search results page is displayed. It contains the ""Soft Stretch Jeans"" product, which matches the entered search term.",Passed,-,2026-09-06,Katarzyna Chardy
+TC-PROD-003,Products,Search for a nonexistent product,"1. The Automation Exercise products page is open:
+https://www.automationexercise.com/products",Phrase: abc,"1. Enter Phrase in the ""Search Product"" field.
+2. Click loop icon.",No products are displayed. The application shows a message informing the user that no products match the entered search term.,"No products are displayed, but the application does not show any information that no matching products were found.",Failed,-,2026-09-07,Katarzyna Chardy
+TC-PROD-004,Products,Open product details,"1. The Automation Exercise home page is open:
+https://www.automationexercise.com
+2. The Products section is visable.",Product: Blue Top,"1. Locate the ""Blue Top"" product.
+2. Click View Product.
+3. Observe the dislated details.","The product details page is displayed. It shows information about the
+selected product, including its name, category, price, availability,
+condition and brand.","The product details page is displayed. The name, category, price,
+availability, condition and brand of the selected product are visible
+and correspond to the selected product.",Passed,-,2026-09-07,Katarzyna Chardy
+TC-CART-002,Cart,Add one product to the cart,"1. The Automation Exercise home page is open:
+https://www.automationexercise.com
+2. The Products section is visable.
+3. Cart is empty.","Product: Blue Top
+Quantity: 1
+","1. Locate the ""Blue Top"" product.
+2. Click ""Add to cart"".
+3. Confirm that the product-added message is displayed.
+4. Click ""View Cart"".
+5. Review the cart contents.","A confirmation message is displayed after adding the product. The cart
+contains one ""Blue Top"" product with quantity 1 and the correct unit
+price and total price.","A confirmation message is displayed. The cart contains one ""Blue Top""
+product with quantity 1. The unit price and total price are displayed
+correctly.",Passed,-,2026-09-07,Katarzyna Chardy
+TC-CART-003,Cart,Add two different products to the cart,"1. The Automation Exercise home page is open:
+https://www.automationexercise.com
+2. The Products section is visable.
+3. Cart is empty.","Product 1: Blue Top
+Quantity: 1
+Product 2: Men Tshirt
+Quantity: 1","1. Locate the ""Blue Top"" product.
+2. Click ""Add to cart"".
+3. Click ""Continue Shopping"" in the confirmation window.
+4. Locate the ""Men Tshirt"" product.
+5. Click ""Add to cart"".
+6. Click ""View Cart"".
+7. Review the cart contents.","The cart contains both selected products: ""Blue Top"" and ""Men Tshirt"".
+Each product has quantity 1. The correct unit price and total price are
+displayed for each product.","The cart contains ""Blue Top"" and ""Men Tshirt"". Each product has quantity
+1, and the unit price and total price are displayed correctly.
+",Passed,-,2026-09-07,Katarzyna Chardy
+TC-CART-004,Cart,Remove a product from the cart,"1. The Cart page is open
+https://www.automationexercise.com/view_cart
+2. The cart contains ""Blue Top"" and ""Men Tshirt"".",Product to remove: Blue Top,"1. Locate the ""Blue Top"" product in the cart.
+2. Click the remove icon next to the product.
+3. Review the cart contents.","""Blue Top"" is removed from the cart. ""Men Tshirt"" remains in the cart
+and its quantity and price do not change.
+","""Blue Top"" is removed from the cart. ""Men Tshirt"" remains in the cart
+with the same quantity and price.",Passed,-,2026-09-07,Katarzyna Chardy
+TC-CART-005,Cart / Registration,Preserve cart contents after registration,"1. The user is not logged in.
+2. The cart is empty.
+3. The Products page is open
+https://www.automationexercise.com/products
+4. The test email address has not been registered previously.","Product: Blue Top
+Quantity: 1
+Email: unique test email address
+Registration data: valid data in all required fields","1. Add ""Blue Top"" to the cart.
+2. Click ""View Cart"".
+3. Verify that ""Blue Top"" is displayed with quantity 1.
+4. Open the ""Signup / Login"" page.
+5. Enter a valid name and a unique email address.
+6. Click ""Signup"".
+7. Complete all required registration fields with valid data.
+8. Click ""Create Account"".
+9. Click ""Continue"" after the account is created.
+10. Open the Cart page.
+11. Review the cart contents.","The account is created successfully. The product added before
+registration remains in the cart with the same quantity and price.","The account is created successfully. ""Blue Top"" remains in the cart
+with quantity 1 and the same price.",Passed,-,2026-09-07,Katarzyna Chardy
+TC-REV-002,Product review,Submit a review using valid data,"1. The product details page is open
+https://www.automationexercise.com/product_details/1
+2. The ""Write Your Review"" form is visible.","Name: Adam
+Email: testowy@gm.com
+Review: The product description is clear and helpful.
+","1. Enter Name in the name field.
+2. Enter Email in the email field.
+3. Enter valid text in the review field.
+4. Click ""Submit"".
+5. Observe the displayed message.","The review form is submitted successfully. A confirmation message
+informing the user that the review was received is displayed.","The review form is submitted successfully. The message
+""Thank you for your review."" is displayed.",Passed,-,2026-09-07,Katarzyna Chardy
+TC-REV-003,Product review,Submit a review with an empty review field,"1. The product details page is open
+https://www.automationexercise.com/product_details/1
+2. The ""Write Your Review"" form is visible.","Name: Adam
+Email: testowy@gm.com
+Review: Empty
+","1. Enter Name in the name field.
+2. Enter Email in the email"" field.
+3. Leave the ""Review"" field empty.
+4. Click ""Submit"".
+5. Observe the form behavior.","The form is not submitted. The user is informed that the review field
+is required.","The form is not submitted. A validation message is displayed for the
+empty review field.",Passed,-,2026-09-07,Katarzyna Chardy
+TC-PAY-002,Payment,Place an order using correctly formatted test data,"1. The user has an active account.
+2. The user is logged in.
+3. At least one product has been added to the cart.
+4. The user has proceeded to checkout.
+5. The delivery and billing details are displayed correctly.
+6. The payment form is open.
+","Name on Card: Adam Tester
+Card Number: 1234567891234567
+CVC: 123
+Expiration Month: 12
+Expiration Year: 2030","1. Enter Name in the name on card field.
+2. Enter Card Name in the card number field.
+3. Enter ""123"" in the CVC field.
+4. Enter ""12"" in the expiration month field.
+5. Enter ""2030"" in the expiration year field.
+6. Click ""Pay and Confirm Order"".
+7. Observe the displayed confirmation.","The payment form accepts the correctly formatted test data. The order
+is placed successfully and an order confirmation message is displayed.","The payment form accepts the test data. The order is placed successfully
+and an order confirmation message is displayed.",Passed,-,2026-09-07,Katarzyna Chardy
+TC-PROD-005,Products,AdGuard hides product search controls,"1. AdGuard is enabled with its default filtering configuration.
+2. The Products page is open in a desktop browser.",-,"1. Enable AdGuard.
+2. Open https://www.automationexercise.com/products
+3. Locate the ""All Products"" section.
+4. Check whether the product search controls are displayed.
+5. Disable AdGuard for automationexercise.com.
+6. Refresh the page.","When AdGuard is enabled, the ""Search Product"" input field and search
+button are not displayed. The controls appear after AdGuard is disabled
+for the website.","The product search controls should remain visible and functional when
+advertising content is blocked because they are part of the core product
+functionality and are not advertisements.",Failed,BUG-005,2026-09-07,Katarzyna Chardy
