@@ -13,7 +13,7 @@
 5. Send an unsupported PUT request to the brands endpoint
 
 ## Observations
-All checks passed during this run. In the negative scenarios, the API reported error codes in the response body while returning HTTP 200. The tests verify these two values separately.
+All 15 checks passed during this run. In both negative scenarios, Postman displayed HTTP 200 while the response body reported an error code. The missing-parameter test checks both values; the unsupported PUT test checks the response body.
 
 ## Evidence
 [Postman Collection Runner screenshot](evidence/api-run-2026-09-20.png)
