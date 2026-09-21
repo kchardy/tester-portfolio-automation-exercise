@@ -1,17 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { acceptConsentIfVisible } from './helpers/consent';
 
 test('Added product is displayed in the cart', async ({ page }) => {
   await page.goto('/products', { waitUntil: 'domcontentloaded' });
 
-  const consentButton = page.getByRole('button', { name: 'Consent' });
-
-  await consentButton
-    .waitFor({ state: 'visible', timeout: 3000 })
-    .catch(() => {});
-
-  if (await consentButton.isVisible()) {
-    await consentButton.click();
-  }
+  await acceptConsentIfVisible(page);
 
   await page.locator('.productinfo .add-to-cart').first().click();
 

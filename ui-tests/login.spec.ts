@@ -1,17 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { acceptConsentIfVisible } from './helpers/consent';
 
 test('Login fails for invalid credentials', async ({ page }) => {
   await page.goto('/login', { waitUntil: 'domcontentloaded' });
 
-  const consentButton = page.getByRole('button', { name: 'Consent' });
-
-  await consentButton
-    .waitFor({ state: 'visible', timeout: 3000 })
-    .catch(() => {});
-
-  if (await consentButton.isVisible()) {
-    await consentButton.click();
-  }
+  await acceptConsentIfVisible(page);
 
   await expect(
     page.getByRole('heading', { name: 'Login to your account' })

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { acceptConsentIfVisible } from './helpers/consent';
 
 test('Products page shows catalogue and search field', async ({ page }) => {
   await page.goto('/products', { waitUntil: 'domcontentloaded' });
@@ -15,6 +16,8 @@ test('Products page shows catalogue and search field', async ({ page }) => {
 test('User can search for products', async ({ page }) => {
   await page.goto('/products', { waitUntil: 'domcontentloaded' });
 
+  await acceptConsentIfVisible(page);
+
   await page.getByPlaceholder('Search Product').fill('jeans');
   await page.locator('#submit_search').click();
 
@@ -30,15 +33,7 @@ test('User can search for products', async ({ page }) => {
 test('User can add a product to the cart', async ({ page }) => {
   await page.goto('/products', { waitUntil: 'domcontentloaded' });
 
-  const consentButton = page.getByRole('button', { name: 'Consent' });
-
-  await consentButton
-    .waitFor({ state: 'visible', timeout: 3000 })
-    .catch(() => {});
-
-  if (await consentButton.isVisible()) {
-    await consentButton.click();
-  }
+  await acceptConsentIfVisible(page);
 
   await page.locator('.productinfo .add-to-cart').first().click();
 
