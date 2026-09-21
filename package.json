@@ -1,0 +1,28 @@
+{
+  "name": "tester-portfolio-automation-exercise",
+  "version": "1.0.0",
+  "description": "This repository documents my testing of [Automation Exercise](https://automationexercise.com/).",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kchardy/tester-portfolio-automation-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kchardy/tester-portfolio-automation-exercise/issues"
+  },
+  "homepage": "https://github.com/kchardy/tester-portfolio-automation-exercise#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}
