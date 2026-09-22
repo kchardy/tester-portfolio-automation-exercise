@@ -35,7 +35,7 @@ test('User can add a product to the cart', async ({ page }) => {
 
   await acceptConsentIfVisible(page);
 
-  await page.locator('.productinfo .add-to-cart').first().click();
+  await page.locator('.productinfo .add-to-cart[data-product-id="1"]').click();
 
   const cartModal = page.locator('#cartModal');
 

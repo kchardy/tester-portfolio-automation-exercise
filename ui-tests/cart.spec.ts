@@ -6,7 +6,7 @@ test('Added product is displayed in the cart', async ({ page }) => {
 
   await acceptConsentIfVisible(page);
 
-  await page.locator('.productinfo .add-to-cart').first().click();
+  await page.locator('.productinfo .add-to-cart[data-product-id="1"]').click();
 
   const cartModal = page.locator('#cartModal');
   await expect(cartModal).toBeVisible();
@@ -19,5 +19,5 @@ test('Added product is displayed in the cart', async ({ page }) => {
 
   await expect(productRow).toBeVisible();
   await expect(productRow).toContainText('Blue Top');
-  await expect(productRow.locator('.cart_quantity')).toContainText('1');
+  await expect(productRow.locator('.cart_quantity')).toHaveText('1');
 });
