@@ -5,9 +5,9 @@
 - Application: https://www.automationexercise.com/
 - Tester: Katarzyna Chardy
 - Test plan version: 1.0
-- Test period: 30.08 – 14.09
+- Planned test period: 30 August–14 September 2026
 
-  ## 2. Objective
+## 2. Objective
 The objective of this project is to verify the main user flows of the
 Automation Exercise web application and identify functional, validation,
 visual and usability defects.
