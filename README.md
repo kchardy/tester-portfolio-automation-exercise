@@ -3,12 +3,18 @@
 
 This repository documents manual, API and automated UI testing of the [Automation Exercise](https://automationexercise.com/) e-commerce application.
 
+> **Featured diagnostic case study:** [Payment validation analysis using Chrome DevTools](docs/devtools-diagnostic-case-study.md)
+
+The main focus of this project is manual QA, defect analysis and evidence-based reporting. Automated tests support repeatable verification of selected scenarios.
+
 ## Project scope
 The project includes:
 
 - Test planning
 - Manual test cases with execution results
 - Defect reports created in GitHub Issues
+- DevTools-based defect diagnosis using Network and Console
+- Frontend/backend problem localisation based on observable evidence
 - Manual test summary report
 - API tests created in Postman
 - Automated UI tests created with Playwright
@@ -35,6 +41,7 @@ The project includes:
 
 ## Repository contents
 - [Test plan](docs/test-plan.md)
+- [DevTools diagnostic case study](docs/devtools-diagnostic-case-study.md)
 - [Manual test cases and execution results](test-cases/README.md)
 - [Bug reports](https://github.com/kchardy/tester-portfolio-automation-exercise/issues)
 - [Manual test summary report](test-report/automation-exercise-test-summary-report.md)
@@ -44,6 +51,7 @@ The project includes:
 ## Tools
 - Git and GitHub
 - GitHub Issues
+- Chrome DevTools
 - Microsoft Excel
 - Postman
 - Playwright
