@@ -67,9 +67,7 @@ Whitespace handling was inconsistent:
 - trailing spaces were removed,
 - leading spaces were preserved and caused a valid term to return no results.
 
-This may cause false empty results when a user accidentally enters spaces
-before a product name. The expected normalisation rules should be confirmed
-before reporting it as a separate defect.
+Follow-up testing with `jeans` and `blue` confirmed that leading spaces prevent valid search results, while trailing spaces are removed. The behaviour is documented in [BUG-007 – Leading spaces prevent valid product search results](https://github.com/kchardy/tester-portfolio-automation-exercise/issues/7).
 
 ### Search state
 
@@ -94,7 +92,4 @@ Recommended additional exploration:
 - browser back and forward navigation after several searches.
 
 ## Session conclusion
-The core search function returned relevant results for valid terms and
-handled letter case consistently in the tested examples. The main usability
-risk is the lack of empty-result feedback. Inconsistent handling of leading
-and trailing whitespace should also be investigated further.
+The core search function returned relevant results for valid terms and handled letter case consistently in the tested examples. The main usability risk is the lack of empty-result feedback. Follow-up testing confirmed inconsistent handling of leading and trailing whitespace, documented in [BUG-007 – Leading spaces prevent valid product search results](https://github.com/kchardy/tester-portfolio-automation-exercise/issues/7).
