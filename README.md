@@ -12,6 +12,7 @@ The project includes:
 
 - Test planning
 - Manual test cases with execution results
+- Exploratory testing documented in time-boxed session notes
 - Defect reports created in GitHub Issues
 - DevTools-based defect diagnosis using Network and Console
 - Frontend/backend problem localisation based on observable evidence
@@ -25,7 +26,7 @@ The project includes:
 - Test cases executed: 22
 - Passed: 16
 - Failed: 6
-- Defects reported: 6
+- Defects reported: 7
 
 ### API testing
 - Requests executed: 5
