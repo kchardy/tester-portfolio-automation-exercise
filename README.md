@@ -42,6 +42,7 @@ The project includes:
 ## Repository contents
 - [Test plan](docs/test-plan.md)
 - [DevTools diagnostic case study](docs/devtools-diagnostic-case-study.md)
+- [Exploratory testing session – product search](docs/exploratory-session-product-search.md) – time-boxed exploratory testing with DevTools request analysis and linked defect reports.
 - [Manual test cases and execution results](test-cases/README.md)
 - [Bug reports](https://github.com/kchardy/tester-portfolio-automation-exercise/issues)
 - [Manual test summary report](test-report/automation-exercise-test-summary-report.md)
